@@ -11,7 +11,7 @@
   try
   { 
 //  $sql="INSERT INTO tbl_users VALUES('','$first_name','$last_name','$user_name','$user_email','$password')";
-  $sql=mysqli_query($conn,"INSERT INTO tbl_users VALUES('','$first_name','$last_name','$user_name','$user_email','$password','$joining_date')");
+  $sql=mysqli_query($conn,"INSERT INTO tbl_users VALUES('','$first_name','$last_name','$user_name','$user_email',md5($password),'$joining_date')");
       //$row=mysqli_fetch_assoc($result);
 
    /*

@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,8 +38,24 @@
       <li><a href="#">Page 3</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
+    <?php 
+     if($_SESSION['user_session']=="") {
+    ?>
       <li><a href="index.php?info=registration"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
       <li><a href="index.php?info=login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      <?php } 
+else {
+  include_once 'dbconfig.php';
+$id=$_SESSION['user_session'];
+$sql="SELECT * FROM tbl_users WHERE user_id=$id";
+$result=mysqli_query($conn,$sql);
+$row=mysqli_fetch_assoc($result);
+  echo "<li class='dropdown'><a class='dropdown-toggle' data-toggle='dropdown' href='#'>".$row['user_name']."<span class='caret'></span></a>";
+  echo "<ul class='dropdown-menu'>
+          <li><a href='logout.php'><span class='glyphicon glyphicon-off'></span> logout</a></li></ul>";
+  //echo "<li><a href='index.php?info=login'><span class='glyphicon glyphicon-off'></span> logout</a></li>";
+}
+      ?>
     </ul>
   </div>
 </nav>
@@ -57,6 +74,9 @@
          }
          else if($info=='login') {
           include('login.php');
+         }
+         else if($info=='home') {
+          include('home.php');
          }
      ?>
        

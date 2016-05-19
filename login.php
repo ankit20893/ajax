@@ -1,3 +1,4 @@
+<div class="col-md-4">
 <div class="signin-form"> 
        <form  class="form-signin" method="post" id="login-form" enctype="multipart/form-data">
       
@@ -8,12 +9,18 @@
         </div>
         
         <div class="form-group">
+        <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
         <input type="email" class="form-control" placeholder="Email address" name="user_email" id="user_email" />
         <span id="check-e"></span>
         </div>
+        </div>
         
         <div class="form-group">
+        <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
         <input type="password" class="form-control" placeholder="Password" name="password" id="password" />
+        </div>
         </div>
        
       <hr />
@@ -26,5 +33,6 @@
 
       
       </form>
-<a href="registration.php">create an account</a>
+<a href="index.php?info=registration">create an account</a>
+    </div>
     </div>

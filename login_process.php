@@ -21,7 +21,7 @@
    $row = $stmt->fetch(PDO::FETCH_ASSOC);
    $count = $stmt->rowCount();
 */   
-   if($row['user_password']==$user_password){
+   if($row['user_password']==md5($user_password)){
     
     echo "ok"; // log in
     $_SESSION['user_session'] = $row['user_id'];

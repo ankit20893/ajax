@@ -71,7 +71,7 @@ $('document').ready(function()
      if(response=="ok"){
          
       $("#btn-signup").html('<img src="btn-ajax-loader.gif" height="50" width="50"/> &nbsp; Signing In ...');
-      setTimeout(' window.location.href = "index.php"; ',4000);
+      window.location.href = "index.php?info=login";
      }
      else{
          
